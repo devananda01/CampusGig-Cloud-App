@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Task Details — CampusGig</title>
+        <link rel="stylesheet" href="css/style.css" />
+        <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+        />
+    </head>
+    <body>
+        <div id="navbar"></div>
+
+        <div id="sidebarContainer"></div>
+
+        <div class="task-page">
+            <a href="applicant-dashboard.html" class="back-link">
+                <span class="material-symbols-outlined">arrow_back</span>
+                Back to Tasks
+            </a>
+
+            <div id="loadingState" class="loading-state">Loading task...</div>
+
+            <div id="errorState" class="empty-state hidden">
+                <span class="material-symbols-outlined">error</span>
+                <h3>Unable to load task</h3>
+                <p>Please try again later.</p>
+            </div>
+
+            <div id="taskContent" class="hidden">
+                <article class="task-card">
+                    <div class="task-header">
+                        <div>
+                            <span id="taskCategory" class="tag"></span>
+                        </div>
+                        <div class="task-price">
+                            <span id="taskBudget" class="amount"></span>
+                            <span class="amount-label">Fixed Budget</span>
+                        </div>
+                    </div>
+                    <div id="alreadyAppliedMessage" class="success-message hidden">
+                        You have already applied for this task.
+                    </div>
+                    <h1 id="taskTitle" class="task-title"></h1>
+
+                    <div class="task-meta-grid">
+                        <div class="meta-item">
+                            <div class="meta-icon-box">
+                                <span class="material-symbols-outlined">location_on</span>
+                            </div>
+                            <div>
+                                <span class="meta-text-label">Location</span>
+                                <span id="taskLocation" class="meta-text-value"></span>
+                            </div>
+                        </div>
+                        <div class="meta-item">
+                            <div class="meta-icon-box">
+                                <span class="material-symbols-outlined">schedule</span>
+                            </div>
+                            <div>
+                                <span class="meta-text-label">Duration</span>
+                                <span id="taskDuration" class="meta-text-value"></span>
+                            </div>
+                        </div>
+                        <div class="meta-item">
+                            <div class="meta-icon-box">
+                                <span class="material-symbols-outlined">calendar_month</span>
+                            </div>
+                            <div>
+                                <span class="meta-text-label">Apply By</span>
+                                <span id="taskDeadline" class="meta-text-value"></span>
+                            </div>
+                        </div>
+                        <div class="meta-item">
+                            <div class="meta-icon-box">
+                                <span class="material-symbols-outlined">task_alt</span>
+                            </div>
+                            <div>
+                                <span class="meta-text-label">Status</span>
+                                <span id="taskStatus" class="meta-text-value"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="task-description">
+                        <h2>Description</h2>
+                        <p id="taskDescription"></p>
+                    </div>
+                </article>
+
+                <section class="application-card">
+                    <h2>Submit Application</h2>
+                    <form id="applicationForm" novalidate>
+                        <textarea
+                            id="applicationMessage"
+                            class="form-textarea"
+                            rows="4"
+                            maxlength="500"
+                            placeholder="Describe your relevant skills, experience, and why you are interested in this task."
+                        ></textarea>
+                        <p id="applicationError" class="error-message"></p>
+                        <div class="application-actions">
+                            <a href="applicant-dashboard.html" class="btn btn-outline">Cancel</a>
+                            <button type="submit" id="submitApplicationBtn" class="btn btn-dark">
+                                Submit Application
+                            </button>
+                        </div>
+                    </form>
+                </section>
+            </div>
+        </div>
+        <div id="toastContainer" class="toast-container"></div>
+
+        <script src="js/config.js"></script>
+        <script src="js/api.js"></script>
+        <script src="js/auth.js"></script>
+        <script src="js/common.js"></script>
+        <script src="js/task-details.js"></script>
+
+        <script>
+            requireLogin();
+            initializePage();
+        </script>
+    </body>
+</html>

@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Create Account - CampusGig</title>
+
+        <link rel="stylesheet" href="css/style.css" />
+
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+    </head>
+
+    <body style="background-color: rgba(0, 0, 0, 0.3)">
+        <main class="auth-page">
+            <div class="auth-card auth-card--wide">
+                <p class="auth-logo">Campus<span>Gig</span></p>
+
+                <h1 class="auth-heading">Create Account</h1>
+
+                <form id="registerForm">
+                    <!-- Full Name -->
+
+                    <div class="form-group">
+                        <label class="form-label" for="fullname"> Full Name </label>
+
+                        <div class="input-field">
+                            <span class="material-symbols-outlined"> person </span>
+
+                            <input type="text" id="fullname" placeholder="John Doe" />
+                        </div>
+
+                        <p id="fullnameError" class="error-message"></p>
+                    </div>
+
+                    <!-- Email -->
+
+                    <div class="form-group">
+                        <label class="form-label" for="email"> School Email </label>
+
+                        <div class="input-field">
+                            <span class="material-symbols-outlined"> mail </span>
+
+                            <input type="email" id="email" placeholder="student@tp.edu.sg" />
+                        </div>
+
+                        <p id="emailError" class="error-message"></p>
+                    </div>
+
+                    <!-- Bio -->
+
+                    <div class="form-group">
+                        <label class="form-label" for="bio"> Bio </label>
+
+                        <textarea id="bio" class="form-textarea" placeholder="Tell us about yourself..."></textarea>
+                    </div>
+
+                    <!-- Course -->
+
+                    <div class="form-group">
+                        <label class="form-label" for="course"> Course </label>
+
+                        <div class="input-field">
+                            <span class="material-symbols-outlined"> school </span>
+
+                            <select id="course">
+                                <option value="">Select Course</option>
+
+                                <option value="Information Technology">Information Technology</option>
+
+                                <option value="Business">Business</option>
+
+                                <option value="Design">Design</option>
+
+                                <option value="Engineering">Engineering</option>
+
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+
+                        <p id="courseError" class="error-message"></p>
+                    </div>
+
+                    <!-- Password -->
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label class="form-label" for="password"> Password </label>
+
+                            <div class="input-field">
+                                <span class="material-symbols-outlined"> lock </span>
+
+                                <input type="password" id="password" placeholder="••••••••" />
+                            </div>
+
+                            <p id="passwordError" class="error-message"></p>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label" for="confirmPassword"> Confirm Password </label>
+
+                            <div class="input-field">
+                                <span class="material-symbols-outlined"> lock </span>
+
+                                <input type="password" id="confirmPassword" placeholder="••••••••" />
+                            </div>
+
+                            <p id="confirmPasswordError" class="error-message"></p>
+                        </div>
+                    </div>
+
+                    <p id="registerError" class="error-message"></p>
+
+                    <button type="submit" class="btn btn-dark btn-block">Register</button>
+
+                    <hr class="form-divider" />
+
+                    <p class="form-footnote">
+                        Already have an account?
+                        <a href="login.html">Log In</a>
+                    </p>
+                </form>
+            </div>
+        </main>
+<div id="toastContainer" class="toast-container"></div>
+        <script src="js/config.js"></script>
+        <script src="js/api.js"></script>
+        <script src="js/auth.js"></script>
+        <script src="js/common.js"></script>
+        <script src="js/register.js"></script>
+    </body>
+</html>

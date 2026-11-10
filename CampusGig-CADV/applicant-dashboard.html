@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Dashboard — CampusGig</title>
+        <link rel="stylesheet" href="css/style.css" />
+        <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+        />
+    </head>
+    <body>
+        <div id="navbar"></div>
+
+        <div id="sidebarContainer"></div>
+
+        <main class="dashboard-main">
+            <div class="page-container">
+                <form id="searchForm" class="search-bar">
+                    <span class="material-symbols-outlined">search</span>
+                    <input type="text" id="searchInput" placeholder="Search tasks..." />
+                    <button type="submit" id="searchBtn" class="btn btn-dark btn-sm">Search</button>
+                </form>
+
+                <div class="filter-bar">
+                    <span class="filter-label">Filters:</span>
+                    <div id="filterContainer"></div>
+                </div>
+                <p id="taskCount" class="task-count"></p>
+                <p class="page-header">
+                    
+                    <h2>Available Tasks</h2>
+                 <br>
+                </p>
+                
+                <div id="loadingState" class="loading-state">
+                    <span class="material-symbols-outlined"> progress_activity </span>
+
+                    <p>Loading tasks...</p>
+                </div>
+
+                <div id="taskContainer" class="gig-grid"></div>
+
+                <div id="emptyState" class="empty-state hidden">
+                    <span class="material-symbols-outlined">work_off</span>
+                    <h3>No tasks found</h3>
+                    <p>There are currently no available tasks.</p>
+                </div>
+            </div>
+            
+        </main>
+        <div id="toastContainer" class="toast-container"></div>
+
+        <script src="js/config.js"></script>
+        <script src="js/api.js"></script>
+        <script src="js/auth.js"></script>
+        <script src="js/common.js"></script>
+        <script src="js/applicant-dashboard.js"></script>
+
+        <script>
+            requireLogin();
+            initializePage();
+        </script>
+    </body>
+</html>

@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>My Profile - CampusGig</title>
+
+        <link rel="stylesheet" href="css/style.css" />
+
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+    </head>
+
+    <body>
+        <div id="navbar"></div>
+
+        <div id="sidebarContainer"></div>
+
+        <main class="profile-page">
+            <h1 class="page-heading">My Profile</h1>
+
+            <div class="profile-header-card">
+                <label for="profileImageInput" class="avatar">
+                    <img id="profileImage" class="profile-image hidden" alt="Profile Picture" />
+
+                    <span id="avatarInitials"></span>
+
+                    <div class="avatar-overlay">
+                        <span class="material-symbols-outlined"> photo_camera </span>
+
+                        <span>Change</span>
+                    </div>
+                </label>
+
+                <input type="file" id="profileImageInput" accept="image/png,image/jpeg,image/jpg" hidden />
+
+                <div class="profile-header-info">
+                    <h2 id="profileName">Full Name</h2>
+
+                    <p id="profileCourse">Course</p>
+
+                    <p id="profileEmail">Email</p>
+                </div>
+            </div>
+
+            <div class="form-section">
+                <h2 class="profile-section-title">About</h2>
+
+                <div class="form-group">
+                    <label class="form-label" for="bio"> Bio </label>
+
+                    <textarea id="bio" class="form-textarea" placeholder="Tell us about yourself..."></textarea>
+                </div>
+            </div>
+
+            <div class="form-section">
+                <h2 class="profile-section-title">Account</h2>
+
+                <div class="form-group">
+                    <label class="form-label" for="fullname"> Full Name </label>
+
+                    <div class="input-field">
+                        <span class="material-symbols-outlined"> person </span>
+
+                        <input type="text" id="fullname" placeholder="Full Name" />
+                    </div>
+
+                    <p id="fullnameError" class="error-message"></p>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label class="form-label" for="email"> School Email </label>
+
+                        <div class="input-field">
+                            <span class="material-symbols-outlined"> mail </span>
+
+                            <input type="email" id="email" readonly />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="course"> Course </label>
+
+                        <div class="input-field">
+                            <span class="material-symbols-outlined"> school </span>
+
+                            <select id="course">
+                                <option value="">Select Course</option>
+
+                                <option value="Information Technology">Information Technology</option>
+
+                                <option value="Business">Business</option>
+
+                                <option value="Design">Design</option>
+
+                                <option value="Engineering">Engineering</option>
+
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+
+                        <p id="courseError" class="error-message"></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="application-actions">
+                <button id="cancelBtn" type="button" class="btn btn-outline">Cancel</button>
+
+                <button id="saveProfileBtn" type="button" class="btn btn-dark">Save Changes</button>
+            </div>
+
+            <p id="profileError" class="error-message"></p>
+        </main>
+        <div id="toastContainer" class="toast-container"></div>
+        <script src="js/config.js"></script>
+        <script src="js/api.js"></script>
+        <script src="js/auth.js"></script>
+        <script src="js/common.js"></script>
+        <script src="js/profile.js"></script>
+
+        <script>
+            requireLogin();
+
+            initializePage();
+        </script>
+    </body>
+</html>
